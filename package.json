@@ -1,0 +1,31 @@
+{
+  "name": "noisereduction-react-electron",
+  "version": "1.0.0",
+  "main": "main.ts",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build && tsc --outDir electron-build",
+    "build:react": "vite build",
+    "build:electron": "tsc --project tsconfig.json",
+    "electron": "electron electron-build/main.js",
+    "dev:react": "vite",
+    "dev:electron": "tsc --watch --outDir electron-build",
+    "dev": "concurrently \"vite\" \"tsc --watch --outDir electron-build\" \"wait-on http://localhost:5173 && electron electron-build/main.js\""
+  },
+  "dependencies": {
+    "noisereduction-react-electron": "file:",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.2",
+    "electron": "^33.2.1",
+    "electron-reloader": "^1.2.3",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.6",
+    "wait-on": "^7.0.1"
+  }
+}
