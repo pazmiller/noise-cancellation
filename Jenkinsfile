@@ -1,6 +1,6 @@
 pipeline {
-    agent any
-
+    agent { label 'docker-agent' }  // 在带有 Docker 的 Agent 上执行
+    
     stages {
         stage('Build & Push App Image') {
             steps {
